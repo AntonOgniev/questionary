@@ -1,0 +1,5 @@
+{
+  "projects": {
+    "default": "antons-quiz-default-rtdb.europe-west1.firebasedatabase.app"
+  }
+}
