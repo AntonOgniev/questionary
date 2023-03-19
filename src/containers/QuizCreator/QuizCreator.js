@@ -18,6 +18,7 @@ function createOptionControl(number) {
       label: `Вариант ${number}`,
       errorMessage: 'Значение не может быть пустым',
       id: number,
+      type: 'file',
     },
     { required: true },
   );
@@ -33,8 +34,8 @@ function createFormControls() {
       { required: true },
     ),
     option1: createOptionControl(1),
-    option2: createOptionControl(2),
-    option3: createOptionControl(3),
+    // option2: createOptionControl(2),
+    // option3: createOptionControl(3),
     // option4: createOptionControl(4),
   };
 }
@@ -54,8 +55,8 @@ class QuizCreator extends Component {
     const {
       question,
       option1,
-      option2,
-      option3,
+      // option2,
+      // option3,
       // option4,
     } = this.state.formControls;
 
@@ -65,8 +66,8 @@ class QuizCreator extends Component {
       rightAnswerId: this.state.rightAnswerId,
       answers: [
         { text: option1.value, id: option1.id },
-        { text: option2.value, id: option2.id },
-        { text: option3.value, id: option3.id },
+        // { text: option2.value, id: option2.id },
+        // { text: option3.value, id: option3.id },
         // { text: option4.value, id: option4.id },
       ],
     };
@@ -95,6 +96,7 @@ class QuizCreator extends Component {
     control.touched = true;
     control.value = value;
     control.valid = validate(control.value, control.validation);
+    // console.log(this.state.formControls);
 
     formControls[controlName] = control;
 

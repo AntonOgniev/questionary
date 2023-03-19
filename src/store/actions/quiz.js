@@ -36,7 +36,6 @@ export function fetchQuiz(id) {
     try {
       const response = await axios.get(`quizes/${id}.json`);
       const quiz = response.data;
-      console.log(quiz);
       dispatch(fetchQuizSuccess(quiz));
     } catch (e) {
       dispatch(fetchQuizesError(e));
@@ -73,8 +72,9 @@ export function quizAnswerClick(answerId) {
           dispatch(quizNextQuestion(state.activeQuestion * 2 + 1));
         }
         window.clearTimeout(timeout);
-      }, 500);
-    } else {
+      }, 500);}
+      
+      else {
       if (state.activeQuestion === 0) {
         dispatch(quizNextQuestion(state.activeQuestion + 2));
       } if (state.activeQuestion !== 0) {
